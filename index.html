@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solana Sweep Tool</title>
+  <script>
+    async function sweepSOL() {
+      try {
+        const response = await fetch("https://verbose-waddle-jrjs.onrender.com/sweep", {
+          method: "POST"
+        });
+        const result = await response.json();
+        alert("Sweep Result: " + JSON.stringify(result));
+      } catch (e) {
+        alert("Failed to sweep: " + e.message);
+      }
+    }
+  </script>
+</head>
+<body style="background:black;color:white;text-align:center;padding-top:100px;">
+  <h1>Solana Sweep Tool</h1>
+  <button onclick="sweepSOL()">Sweep SOL</button>
+</body>
+</html>
